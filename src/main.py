@@ -39,6 +39,11 @@ def main():
                     log_event("player_hit")
                     print("Game Over!")
                     sys.exit()
+            for shot in shots:
+                if aste.collide_with(shot):
+                    log_event("asteroid_shot")
+                    aste.split()
+                    shot.kill()
         pygame.display.flip()
 if __name__ == "__main__":
     main()
